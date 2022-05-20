@@ -1,4 +1,4 @@
-let num = prompt("Digite um número");
+let num = Number(prompt("Digite um número"));
 
 document.body.innerHTML += `<h1>Seu número é ${num}.</h1><br />`;
 document.body.innerHTML += `Raiz quadrada: ${num ** 0.5}.<br />`;
