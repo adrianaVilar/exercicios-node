@@ -3,7 +3,7 @@
 :root {
     --primary-color: rgb(6, 116, 83);
     --primary-color-darker: rgb(4, 56, 40);
-    --danger: rgb(211, 51, 51);
+    --danger: rgba(209, 57, 103, 0.74);
     --success: rgb(7, 179, 121);
 }
 

@@ -15,14 +15,15 @@ function escopoDaCalculadora() {
     let legenda;
 
     console.log(peso);
-    console.log(altura);
+    console.log(altura, typeof (1 * altura));
+
     console.log(imc);
 
-    if (peso > 650 || peso < 0) {
+    if (peso > 650 || peso < 0 || isNaN(peso) || peso === "") {
       legenda = "Digite um peso válido.";
       erro.innerHTML = `<p> ${legenda}</p>`;
     } else {
-      if (altura > 2.5 || altura < 0) {
+      if (altura > 2.5 || altura < 0 || isNaN(altura) || altura === "") {
         legenda = "Digite uma altura válida.";
         erro.innerHTML = `<p> ${legenda}</p>`;
       } else {
