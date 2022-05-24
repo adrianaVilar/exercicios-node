@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
+
+:root {
+    --primary-color: rgb(6, 116, 83);
+    --primary-color-darker: rgb(4, 56, 40);
+    --danger: rgb(211, 51, 51);
+    --success: rgb(7, 179, 121);
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--primary-color);
+    font-family: "Open sans", sans-serif;
+    font-size: 1.25em;
+    line-height: 0.8em;
+}
+
+.container {
+    max-width: 640px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.legenda1 {
+    box-sizing: border-box;
+    padding-left: 10px;
+    margin: 10px;
+
+}
+
+.legenda2 {
+    box-sizing: border-box;
+    padding-right: auto;
+    margin: auto;
+}
+
+.calculadora {
+    width: 100%;
+}
+
+form button, form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input {
+    font-size: 20px;
+    height: 30px;
+    padding: 0px 20px;
+}
+
+form input:focus {
+    outline: 1px solid var(--primary-color);
+}
+
+form button {
+    border: none;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+form button:hover {
+    background: var(--primary-color-darker);
+}
+
+.resultado {
+    margin: auto;
+    background: var(--success);
+    padding: auto;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.erro {
+    margin: auto;
+    background: var(--danger);
+    padding: auto;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 100%;
+}
