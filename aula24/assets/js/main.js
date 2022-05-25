@@ -1,4 +1,4 @@
-const resultado = document.querySelector(".resultado");
+const h1 = document.querySelector(".container h1");
 const data = new Date();
 const semana = [
   "Domingo",
@@ -43,4 +43,4 @@ function formataMes(mes) {
 const diaFormatado = formataDia(diaDaSemana);
 const mesFormatado = formataMes(mes);
 
-resultado.innerHTML = `<p>${diaFormatado}, ${diaDoMes} de ${mesFormatado} de ${ano}. ${hora}:${minuto}</p>`;
+h1.innerHTML = `<p>${diaFormatado}, ${diaDoMes} de ${mesFormatado} de ${ano}. ${hora}:${minuto}</p>`;
