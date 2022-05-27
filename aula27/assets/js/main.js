@@ -5,7 +5,11 @@ const elementos = [
   { tag: "footer", texto: "Frase 4" },
 ];
 
-const [p, div, footer, section] = elementos;
+const elemento = ([p, div, footer, section] = elementos);
+
+// console.log(elemento);
+// console.log(elemento[0]);
+// console.log(elemento[0].tag);
 
 function criaParagrafo() {
   const paragrafo = document.createElement("p");
@@ -18,10 +22,14 @@ function setParagrafo() {
   const paragrafo = criaParagrafo();
 
   paragrafo.classList.add("frases");
-  paragrafo.innerHTML += `<${p.tag}> ${p.texto} <br />`;
-  paragrafo.innerHTML += `<${div.tag}> ${div.texto} <br />`;
-  paragrafo.innerHTML += `<${footer.tag}> ${footer.texto} <br />`;
-  paragrafo.innerHTML += `<${section.tag}> ${section.texto} <br />`;
+
+  function setElemento() {
+    for (let i = 0; i < elemento.length; i++) {
+      paragrafo.innerHTML += `<${elemento[i].tag}> ${elemento[i].texto} <br />`;
+    }
+  }
+
+  setElemento();
   container.appendChild(paragrafo);
 }
 
