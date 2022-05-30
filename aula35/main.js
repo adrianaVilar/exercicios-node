@@ -14,7 +14,3 @@ console.log(numero(10), "deve retornar Buzz");
 console.log(numero(15), "deve retornar FizzBuzz");
 console.log(numero(7), "deve retornar 7");
 console.log(numero("qwe"), "deve retornar qwe");
-
-for (let i = 0; i <= 100; i++) {
-  console.log(i, numero(i));
-}
