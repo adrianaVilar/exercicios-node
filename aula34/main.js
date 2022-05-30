@@ -2,13 +2,12 @@
 const l = 200;
 const h = 300;
 
-const ePaisagemC = (l, h) => (l > h ? true : false);
+const ePaisagemC = (l, h) => l > h;
 
 console.log(ePaisagemC(l, h));
 
 function ePaisagemF(l, h) {
-  if (l > h) return true;
-  else return false;
+  return l > h;
 }
 
 console.log(ePaisagemF(l, h));
