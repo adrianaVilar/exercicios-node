@@ -20,11 +20,11 @@ function criaHora(segundos) {
 }
 
 iniciar.addEventListener("click", function (event) {
+  event.preventDefault();
   timer = setInterval(function () {
     segundos++;
     relogio.innerHTML = criaHora(segundos);
   }, 1000);
-  event.preventDefault();
   relogio.style.color = "#000000";
 });
 
