@@ -35,7 +35,7 @@ pausar.addEventListener("click", function (event) {
 });
 
 zerar.addEventListener("click", function () {
-  clearInterval(timer);
+  // clearInterval(timer);
   segundos = 0;
   relogio.innerHTML = criaHora(0);
   relogio.style.color = "#000000";
