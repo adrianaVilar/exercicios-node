@@ -12,5 +12,5 @@
 // console.log(nomes);
 
 const nomes = ["Adri", "Corrêa", "Vilar"];
-const nome = nomes.join(" - ");
+const nome = nomes.join(" ");
 console.log(nome);
