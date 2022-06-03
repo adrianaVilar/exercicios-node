@@ -1,12 +1,12 @@
 function Calculadora() {
   this.display = document.querySelector(".display");
 
-  this.inicia = function Inicia() {
+  this.inicia = () => {
     this.clique();
     this.enter();
   };
 
-  this.enter = function Enter() {
+  this.enter = () => {
     this.display.addEventListener("keyup", (e) => {
       if (e.keyCode === 13) {
         this.conta();
@@ -14,15 +14,11 @@ function Calculadora() {
     });
   };
 
-  this.clear = function Clear() {
-    this.display.value = "";
-  };
+  this.clear = () => (this.display.value = "");
 
-  this.apagar = function Apagar() {
-    this.display.value = this.display.value.slice(0, -1);
-  };
+  this.apagar = () => (this.display.value = this.display.value.slice(0, -1));
 
-  this.conta = function Conta() {
+  this.conta = () => {
     let conta = this.display.value;
 
     try {
@@ -40,30 +36,23 @@ function Calculadora() {
     }
   };
 
-  this.clique = function Clique() {
+  this.clique = () => {
     document.addEventListener("click", (e) => {
       const el = e.target;
 
-      if (el.classList.contains("btn-num")) {
-        this.apresentar(el.innerText);
-      }
+      if (el.classList.contains("btn-num")) this.apresentar(el.innerText);
 
-      if (el.classList.contains("btn-clear")) {
-        this.clear();
-      }
+      if (el.classList.contains("btn-clear")) this.clear();
 
-      if (el.classList.contains("btn-del")) {
-        this.apagar();
-      }
+      if (el.classList.contains("btn-del")) this.apagar();
 
-      if (el.classList.contains("btn-eq")) {
-        this.conta();
-      }
+      if (el.classList.contains("btn-eq")) this.conta();
     });
   };
 
-  this.apresentar = function Apresentar(valor) {
-    this.display.value += valor;
+  this.apresentar = (el) => {
+    this.display.value += el;
+    this.display.focus();
   };
 }
 
