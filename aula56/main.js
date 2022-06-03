@@ -17,3 +17,14 @@ const filtroNomeTerminaComA = pessoas.filter((obj) =>
   obj.nome.toLowerCase().endsWith("a")
 );
 console.log(filtroNomeTerminaComA);
+
+const frutas = [
+  { nome: "banana", propriedades: { cor: "amarelo" } },
+  { nome: "maça", propriedades: { cor: "vermelho" } },
+  { nome: "pera", propriedades: { cor: "amarelo" } },
+];
+
+const frutasAmarelas = frutas.filter(
+  (valor) => valor.propriedades.cor === "amarelo"
+);
+console.log(frutasAmarelas);
