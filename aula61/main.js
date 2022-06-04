@@ -16,3 +16,10 @@ pessoa1.getDataNascimento = function () {
 };
 
 console.log(pessoa1.falarIdade());
+
+for (let chave in pessoa1) {
+  console.log(chave);
+}
+for (let chave in pessoa1) {
+  console.log(pessoa1[chave]);
+}
