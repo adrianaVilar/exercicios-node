@@ -21,13 +21,20 @@ for (const pessoa of pessoas) {
 }
 
 console.log(novasPessoas);
+console.log();
 console.log(novasPessoas.get(3));
+console.log();
 
 //Destructor:
 for (const [identifier, { id, nome }] of novasPessoas) {
   console.log(identifier, id, nome);
 }
 
+console.log();
 //Deletar:
 novasPessoas.delete(2);
+console.log(novasPessoas);
+console.log();
+
+novasPessoas.delete(3);
 console.log(novasPessoas);
