@@ -43,10 +43,10 @@ class ValidaCPF {
   }
 }
 
-let validacpf = new ValidaCPF("705.484.450-52");
+// let validacpf = new ValidaCPF("705.484.450-52");
 
-if (validacpf.valida()) {
-  console.log("CPF válido");
-} else {
-  console.log("CPF inválido");
-}
+// if (validacpf.valida()) {
+//   console.log("CPF válido");
+// } else {
+//   console.log("CPF inválido");
+// }
