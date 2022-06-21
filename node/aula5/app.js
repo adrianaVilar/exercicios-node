@@ -19,7 +19,10 @@ async function leArquivo(caminho) {
 }
 
 function renderizaDados(dados) {
-  console.log(dados);
+  dados = JSON.parse(dados);
+  dados.forEach((val) => {
+    console.log(val.nome);
+  });
 }
 
 leArquivo(caminhoDoJson);
