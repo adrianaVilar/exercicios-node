@@ -9,8 +9,9 @@
   <body>
     <section class="container">
       <h1>
-        <%= titulo %> <br />
-        <%- titulo %>
+        <% numeros.forEach(num => { %> <%= num %><br />
+
+        <% }); %>
       </h1>
 
       <form action="/" method="post">
