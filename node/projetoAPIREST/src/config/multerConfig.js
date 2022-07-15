@@ -5,6 +5,16 @@ import { extname, resolve } from "path";
 const aleatorio = () => Math.floor(Math.random() * 10000 + 10000);
 
 export default {
+  // Para filtrar os arquivos que chegam pelo tipo (mais seguro que pela extensão)
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype !== "image/png" && file.mimetype !== "image/jpeg") {
+      return cb(
+        new multer.MulterError("Arquivo precisa ser png, jpg ou jpeg.")
+      );
+    }
+
+    return cb(null, true);
+  },
   // Para salvar a imagem em uma pasta do servidor
   storage: multer.diskStorage({
     // Local para salvar
