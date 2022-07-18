@@ -70,4 +70,9 @@ export default class Aluno extends Model {
     );
     return this;
   }
+
+  // Dizer que o aluno tem fotos, com a FK aluno_id
+  static associate(models) {
+    this.hasMany(models.Foto, { foreignKey: "aluno_id" });
+  }
 }

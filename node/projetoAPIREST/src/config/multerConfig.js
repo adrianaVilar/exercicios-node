@@ -20,7 +20,7 @@ export default {
     // Local para salvar
     destination: (req, file, cb) => {
       // Esse primeiro parametro receberia um erro se houvesse
-      cb(null, resolve(__dirname, "..", "..", "uploads"));
+      cb(null, resolve(__dirname, "..", "..", "uploads", "images"));
     },
     filename: (req, file, cb) => {
       // Extname: pega a extensão do arquivo

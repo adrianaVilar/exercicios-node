@@ -11,7 +11,7 @@ const router = new Router();
 // router.put("/:id", userController.update); -> Dessa forma qlqr usuario poderia atualizar
 // router.delete("/:id", userController.delete); -> Dessa forma qlqr user poderia deletar
 
-router.post("/", userController.store); // Esse não precisa de login, pq o usuario precisa acessar para criar conta
+router.post("/", loginRequired, userController.store); // Esse não precisa de login, pq o usuario precisa acessar para criar conta
 router.put("/", loginRequired, userController.update); // Precisa de login
 router.delete("/", loginRequired, userController.delete); // Precisa de login
 
