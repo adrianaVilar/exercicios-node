@@ -10,5 +10,13 @@ module.exports = {
   },
   rules: {
     "no-console": "off",
+    "class-methods-use-this": "off",
+    quotes: "off",
+    "import/first": "off",
+    "comma-dangle": "off",
+    "implicit-arrow-linebreak": "off",
+    "no-param-reassign": "off",
+    "operator-linebreak": "off",
+    camelcase: "off",
   },
 };

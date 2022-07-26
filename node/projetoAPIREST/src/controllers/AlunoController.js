@@ -49,26 +49,7 @@ class AlunoController {
         });
       }
 
-      const aluno = await Aluno.findByPk(id, {
-        attributes: [
-          "id",
-          "nome",
-          "sobrenome",
-          "email",
-          "idade",
-          "peso",
-          "altura",
-        ],
-        // Ordem de apresentação decrescente:
-        order: [
-          ["id", "DESC"],
-          [Foto, "id", "DESC"],
-        ],
-        include: {
-          model: Foto,
-          attributes: ["url", "filename"],
-        },
-      });
+      const aluno = await Aluno.findByPk(id);
 
       if (!aluno) {
         return res.status(400).json({
