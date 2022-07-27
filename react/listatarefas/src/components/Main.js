@@ -21,7 +21,7 @@ export default class Main extends Component {
     // Trim = remove espaços desnecessários
     novaTarefa = novaTarefa.trim();
 
-    if(tarefas.indexOf(novaTarefa) != -1) return;
+    if(tarefas.indexOf(novaTarefa) !== -1) return;
 
     const novasTarefas = [...tarefas];
 
@@ -36,6 +36,21 @@ export default class Main extends Component {
       novaTarefa: e.target.value,
     });
   };
+
+
+  handleEdit = (e, index) => {
+console.log("Edit", index);
+}
+
+handleDelete = (e, index) => {
+    const { tarefas } = this.state;
+    const novasTarefas = [...tarefas];
+    novasTarefas.splice(index, 1);
+
+    this.setState({
+      tarefas: [...novasTarefas],
+    });
+  }
 
   // Toda vez que a variável mudar, o render vai atualizando na página
   render() {
@@ -52,13 +67,17 @@ export default class Main extends Component {
       </form>
 
     <ul className="tarefas">
-      {tarefas.map(tarefas => (
-        <li key={tarefas}>
-          {tarefas}
+      {tarefas.map((tarefa, index) => (
+        <li key={tarefa}>
+          {tarefa}
           <span>
-<FaEdit className="edit"/>
-<FaWindowClose className="delete"/>
-            </span></li>
+              <FaEdit
+                  onClick={(e) => this.handleEdit(e, index)}
+                  className="edit"/>
+              <FaWindowClose
+                  onClick={(e) => this.handleDelete(e, index)}
+                  className="delete"/>
+          </span></li>
       ))}
     </ul>
 
