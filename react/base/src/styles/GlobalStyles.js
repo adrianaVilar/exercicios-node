@@ -19,10 +19,15 @@ export default createGlobalStyle`
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: ${colors.primaryDarkColor};
+}
+
 body {
   font-family: sans-serif;
   background: ${colors.primaryDarkColor};
-  color: ${colors.primaryColor};
+  color: ${colors.primaryDarkColor};
 }
 
 html, body, #root {
@@ -37,11 +42,6 @@ button {
   padding: 10px 20px;
   border-radius: 4px;
   font-weight: 700;
-}
-
-a {
-  text-decoration: none;
-  color: ${colors.primaryColor};
 }
 
 ul {
@@ -75,5 +75,5 @@ export const Container = styled.section`
   margin: 30px auto;
   padding: 30px;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 `;
