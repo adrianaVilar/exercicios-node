@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { isEmail } from 'validator';
 import { get } from 'lodash';
+import { useSelector } from 'react-redux';
 
 import { Container } from '../../styles/GlobalStyles';
 import { Form } from './styled';
@@ -10,6 +11,8 @@ import history from '../../services/history';
 import Loading from '../../components/Loading';
 
 export default function Register() {
+  const authData = useSelector((state) => console.log(state.auth));
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

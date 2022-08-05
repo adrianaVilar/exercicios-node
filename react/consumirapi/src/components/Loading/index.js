@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from './styled';
-import Lottie from 'lottie-react';
+import Lottie from 'lottie-react-web';
 
+import { Container } from './styled';
 import animatedLoading from '../../assets/check.json';
 
 export default function Loading({ isLoading }) {
@@ -16,7 +16,6 @@ export default function Loading({ isLoading }) {
   return (
     <Container>
       <div />
-      <span>Carregando...</span>
       <Lottie options={defaultOptions} height={400} width={400} />
     </Container>
   );
@@ -27,5 +26,5 @@ Loading.defaultProps = {
 };
 
 Loading.propTypes = {
-  isLoading: PropTypes.boll,
+  isLoading: PropTypes.bool,
 };
