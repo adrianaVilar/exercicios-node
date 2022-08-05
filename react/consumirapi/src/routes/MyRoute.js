@@ -7,8 +7,8 @@ export default function MyRoute({ component: Component, isClosed, ...rest }) {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
   if (isClosed && !isLoggedIn) {
+    // Redireciona para login e a chave prevPath permite saber o caminho antigo, para redirecionar para o mesmo
     return (
-      // Redireciona para login e a chave prevPath permite saber o caminho antigo, para redirecionar para o mesmo
       <Redirect
         to={{ pathname: '/login', state: { prevPath: rest.location.pathname } }}
       />
@@ -18,13 +18,14 @@ export default function MyRoute({ component: Component, isClosed, ...rest }) {
   return <Route {...rest} component={Component} />;
 }
 
+// Por padrão, a rota é aberta
 MyRoute.defaultProps = {
-  // Por padrão, a rota é aberta
   isClosed: false,
 };
 
+// Pode ser duas coisas: elemento ou função
 MyRoute.propTypes = {
-  // Pode ser duas coisas: elemento ou função
-  component: PropTypes.oneOfType(PropTypes.element, PropTypes.func).isRequired,
+  component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
+    .isRequired,
   isClosed: PropTypes.bool,
 };
