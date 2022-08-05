@@ -11,7 +11,8 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
   persistedReducer(rootReducer),
-  applyMiddleware(sagaMiddleware)
+  // eslint-disable-next-line prettier/prettier
+  applyMiddleware(sagaMiddleware),
 );
 
 sagaMiddleware.run(rootSaga);

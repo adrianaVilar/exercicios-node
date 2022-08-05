@@ -7,13 +7,18 @@ import { Container } from '../../styles/GlobalStyles';
 import { EventContainer, EventImage } from './styled';
 import axios from '../../services/axios';
 
+import Loading from '../../components/Loading';
+
 export default function Events() {
   const [events, setEvents] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function getData() {
+      setIsLoading(true);
       const response = await axios.get('/events');
       setEvents(response.data);
+      setIsLoading(false);
     }
 
     getData();
@@ -21,6 +26,7 @@ export default function Events() {
 
   return (
     <Container>
+      <Loading isLoading={isLoading} />
       <h1>Eventos</h1>
 
       <EventContainer>
