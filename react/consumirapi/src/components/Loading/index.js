@@ -16,7 +16,12 @@ export default function Loading({ isLoading }) {
   return (
     <Container>
       <div />
-      <Lottie options={defaultOptions} height={400} width={400} />
+      <Lottie
+        options={defaultOptions}
+        height={400}
+        width={400}
+        style={{ background: 'none' }}
+      />
     </Container>
   );
 }

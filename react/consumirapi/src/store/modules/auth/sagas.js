@@ -29,9 +29,48 @@ function persistRehydrate({ payload }) {
   axios.defaults.headers.Authorization = `Bearer ${token}`;
 }
 
-function registerRequest({ payload }) {
+function* registerRequest({ payload }) {
   const { id, name, email, password } = payload;
-  console.log('continua');
+
+  try {
+    if (id) {
+      yield call(axios.put, '/users', {
+        email,
+        name,
+        password: password || undefined,
+      });
+      toast.success('Dados alterados com sucesso!');
+      yield put(actions.registerUpdatedSuccess({ name, email, password }));
+    } else {
+      yield call(axios.post, '/users', {
+        email,
+        name,
+        password: password,
+      });
+      toast.success('Conta criada com sucesso!');
+      yield put(actions.registerCreatedSuccess({ name, email, password }));
+      history.push('/login');
+    }
+  } catch (e) {
+    const errors = get(e, 'response.data.errors', []);
+    const status = get(e, 'reponse.status', 0);
+
+    if (status === 401) {
+      toast.error(
+        'Seus dados foram alterados. Por favor, faça login novamente',
+      );
+      yield put(actions.loginFailure());
+      return history.push('/login');
+    }
+
+    if (errors.length > 0) {
+      errors.map((error) => toast.error(error));
+    } else {
+      toast.error('Erro desconhecido');
+    }
+
+    yield put(actions.registerFailure());
+  }
 }
 
 export default all([
