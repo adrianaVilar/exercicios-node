@@ -1,6 +1,7 @@
 // Estiliza os componentes
 
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const EventContainer = styled.div`
   margin-top: 20px;
@@ -22,4 +23,9 @@ export const EventImage = styled.div`
     height: 70px;
     border-radius: 10%;
   }
+`;
+
+export const NewEvent = styled(Link)`
+  display: block;
+  padding: 20px 0 10px 0;
 `;
